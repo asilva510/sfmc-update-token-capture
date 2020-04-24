@@ -1,0 +1,22 @@
+{
+  "name": "SFMC - Update-Token Capture",
+  "version": "1.0",
+  "description": "Marketing Cloud Token",
+  "permissions": ["alarms", "storage","tabs","downloads", "https://*/*"],
+  "options_page": "",
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+   {
+     "matches": ["https://*.exacttarget.com/*"],
+     "exclude_matches": ["https://*.login.exacttarget.com/*"],
+     "js": ["extension.js"],
+     "run_at": "document_end"
+   }
+ ],
+  "manifest_version": 2
+}
